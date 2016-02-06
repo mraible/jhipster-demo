@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="blogApp.blogManagement.detail.title">Blog</span> {{blog.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="blogApp.blogManagement.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{blog.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blogApp.blogManagement.handle">Handle</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{blog.handle}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blogApp.blogManagement.user">user</span>
+                </td>
+                <td>
+                    {{blog.user.login}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
