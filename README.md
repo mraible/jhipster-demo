@@ -1,4 +1,6 @@
-# blog
+# JHipster Blog Demo
+
+To see a screencast of how this application was created, please see https://youtu.be/ZGF4gEM4FuA.
 
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
