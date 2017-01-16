@@ -4,6 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import org.jhipster.blog.domain.Blog;
 import org.jhipster.blog.repository.BlogRepository;
 import org.jhipster.blog.repository.search.BlogSearchRepository;
+import org.jhipster.blog.security.SecurityUtils;
 import org.jhipster.blog.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -132,6 +133,7 @@ public class BlogResource {
         log.debug("REST request to search Blogs for query {}", query);
         return StreamSupport
             .stream(blogSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .filter(blog -> blog.getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin()))
             .collect(Collectors.toList());
     }
 }

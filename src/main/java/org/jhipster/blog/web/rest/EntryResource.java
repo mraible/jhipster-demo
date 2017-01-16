@@ -139,6 +139,7 @@ public class EntryResource {
         log.debug("REST request to search Entries for query {}", query);
         return StreamSupport
             .stream(entrySearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .filter(entry -> entry.getBlog().getUser().getLogin().equals(SecurityUtils.getCurrentUserLogin()))
             .collect(Collectors.toList());
     }
 }
